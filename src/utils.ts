@@ -1,6 +1,6 @@
 import { promises as fs, readFileSync as _readFileSync, constants as FS_CONSTANTS } from 'node:fs'
 import { createHash, type BinaryLike } from 'node:crypto'
-import { resolvePath, useNuxt } from '@nuxt/kit'
+import { useNuxt } from '@nuxt/kit'
 import { parse as parsePath, resolve, relative, join } from 'pathe'
 import { parse as _parseCode } from '@babel/parser'
 import { defu } from 'defu'
@@ -267,7 +267,7 @@ export async function resolveVueI18nConfigInfo(
     }
   }
 
-  const absolutePath = await resolvePath(configPathInfo.relative, { cwd: rootDir, extensions: EXECUTABLE_EXTENSIONS })
+  const absolutePath = resolve(rootDir, configPath)
   if (!(await isExists(absolutePath))) return undefined
 
   const parsed = parsePath(absolutePath)
