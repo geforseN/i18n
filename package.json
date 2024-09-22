@@ -41,7 +41,6 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "git config --local core.hooksPath .githooks",
     "build": "nuxi build-module .",
     "stub": "nuxi build-module --stub .",
     "prepack": "pnpm build",
