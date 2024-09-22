@@ -41,7 +41,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "nuxi build-module .",
+    "build": "rollup -c rollup.config.js",
     "stub": "nuxi build-module --stub .",
     "prepack": "pnpm build",
     "release": "bumpp --commit \"release: v%s\" --push --tag",
